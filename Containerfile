@@ -6,8 +6,8 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="jorge.castro@gmail.com"
 
 COPY extra-packages /
-RUN pacman --no-confirm -Syyu && \
-    grep -v '^#' /extra-packages | xargs pacman --no-confirm -S
+RUN pacman --noconfirm -Syyu && \
+    grep -v '^#' /extra-packages | xargs pacman --noconfirm -S
 RUN rm /extra-packages
 
 RUN   ln -fs /bin/sh /usr/bin/sh && \
