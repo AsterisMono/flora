@@ -5,7 +5,7 @@ LABEL com.github.containers.toolbox="true" \
       summary="A cloud-native terminal experience" \
       maintainer="jorge.castro@gmail.com"
 
-COPY extra-packages /
+COPY extra-packages remove-pacakges /
 RUN pacman-key --init && pacman-key --populate archlinux && \pacman --noconfirm -Syyu && \
       grep -v '^#' /remove-packages | xargs pacman --noconfirm -Rs && \
       grep -v '^#' /extra-packages | xargs pacman --noconfirm -S
