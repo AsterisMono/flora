@@ -27,3 +27,5 @@ wl-clipboard
 zstd
 nodejs-lts-iron
 zoxide
+lazygit
+fisher
