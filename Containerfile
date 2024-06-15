@@ -1,4 +1,4 @@
-FROM quay.io/toolbx/arch-toolbox:latest
+FROM ghcr.io/ublue-os/arch-distrobox:latest
 
 LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
@@ -6,10 +6,10 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="jorge.castro@gmail.com"
 
 COPY extra-packages remove-packages /
-RUN pacman-key --init && pacman-key --populate archlinux && \pacman --noconfirm -Syyu && \
+RUN pacman --noconfirm -Syyu && \
       grep -v '^#' /remove-packages | xargs pacman --noconfirm -Rs && \
       grep -v '^#' /extra-packages | xargs pacman --noconfirm -S
-RUN rm /extra-packages
+RUN rm /extra-packages /remove-packages
 
 RUN   ln -fs /bin/sh /usr/bin/sh && \
       ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/docker && \
