@@ -1,5 +1,9 @@
 # boxkit
 
+## Archive Notice
+
+Migrated to NixOS [Flake](https://github.com/AsterisMono/flake).
+
 ## Description
 
 boxkit is a set of GitHub actions and skeleton files to build toolbox and distrobox images. Basically, clone this repo, make the changes you want, and then build what you need. Some examples include:
